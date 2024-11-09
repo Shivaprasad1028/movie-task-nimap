@@ -1,0 +1,735 @@
+/* Movies container (Flexbox for horizontal layout) */
+*{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-decoration: none;
+}
+.page-title{
+    text-align: center;
+    color: white;
+    padding-top: 20px;
+}
+.movies-container {
+  display: flex;
+  flex-wrap: wrap;
+ /* Allows cards to wrap to the next line if space is limited */
+  gap: 20px; /* Adds space between cards */
+  justify-content: center; /* Align cards to the left */
+  padding: 20px; /* Adds some padding around the container */
+}
+
+/* Individual movie card styling */
+.movie-card {
+  width: 270px; /* Fixed width for each card */
+  background-color: #333;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+/* Hover effect for movie card */
+.movie-card:hover {
+  transform: scale(1.04); /* Slight scale effect when hovered */
+}
+
+/* Movie card image styling */
+.movie-card img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover; /* Ensures the image covers the entire space without distortion */
+}
+
+/* Content inside movie card */
+.movie-card-content {
+  padding: 10px;
+}
+
+/* Movie card title styling */
+.movie-card-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0;
+  color: #ffffff;
+  text-overflow: ellipsis; /* Ensures long titles don't overflow */
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Movie card description styling */
+.movie-card-description {
+  font-size: 14px;
+  color: #ffffff;
+  line-height: 1.4;
+  height: 60px; /* Fixed height for the description to ensure uniform card sizes */
+  overflow: hidden; /* Hide text overflow */
+  text-overflow: ellipsis; /* Show ellipsis if the description is too long */
+}
+/* Styling for the movie rating */
+.movie-rating {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    color: #ffffff; 
+    text-decoration: none;/* Dark color for the text */
+
+  }
+  
+  .rating-text {
+    font-size: 14px; /* Slightly smaller text for 'Rating:' label */
+    color: #ffffff; /* Lighter color for the label */
+    margin-right: 5px; /* Space between the label and the rating value */
+    
+  }
+  
+  .rating-value {
+    font-size: 16px; /* Font size for the rating number */
+    font-weight: bold;
+    color: #ffcc00; /* Golden color for the rating value */
+  }
+  .popular-movies,.top-rated-page,.upcoming-page,.search-page{
+    background-color: #161616;
+    margin-top: -30px;
+  }
+  .search-page h2{
+    padding: 10px;
+  }
+  .search-page h2, .movie-card-content h3, .movie-card-content p{
+    color: white;
+  }
+ 
+/* Pagination container */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+/* Pagination button styling */
+.pagination button {
+  padding: 10px 20px;
+  background-color: #4b4b4b;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: 600;
+  font-size: 16px;
+}
+.pagination-info{
+  color: #ccc;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 700;
+}
+/* Hover effect for pagination buttons */
+.pagination button:hover {
+  background-color: #696969;
+}
+.link-search{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  gap: 20px;
+}
+
+
+
+.movie-detail-page {
+  padding: 20px;
+ background-size: cover;
+ margin: 20px;
+ padding: 20px;
+ color: white;
+ height: 450px;
+  
+}
+
+
+.movie-detail-container {
+
+  margin-top: 20px;
+}
+
+.movie-top{
+  display: flex;
+  gap: 20px;
+  
+}
+.movie-detail-poster {
+  width: 200px;
+  border-radius: 4px;
+  border: 1px solid white;
+}
+
+.movie-detail-content{
+  margin-top: 100px;
+  color: black;
+
+
+}
+.movie-detail-content h3{
+  font-size: 30px;
+  border-bottom: 4px solid black;
+  width:70px;
+}
+.movie-detail-content ul li p{
+  width: 200px;
+  text-align: center;
+}
+.movie-cast-list {
+  display: flex;
+flex-wrap: wrap;
+
+  gap: 13px;
+  list-style: none;
+  padding: 0;
+}
+
+.runtime{
+  display: flex;
+  gap: 20px;
+}
+.cast-member-photo {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  justify-content:center ;
+}
+.overview{
+  width:40%;
+}
+
+
+/* Additional Styles for Navbar and Search (optional) */
+nav {
+  background-color: #4b4b4b;
+  padding: 10px 20px;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  height: 60px;
+  
+}
+nav .nav-tittle{
+margin: 0 10%;
+color: white;
+letter-spacing: 2px;
+cursor: pointer;
+
+
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 25px;
+  font-size: 17px;
+  font-weight: 600;
+
+ 
+}
+.navbar-title{
+  font-size: 25px;
+
+
+
+}
+.diff-color{
+  color: #ff6a6a;
+  font-weight: 700;
+
+}
+nav .nav-links:hover {
+  border-bottom: 3px solid #ff6a6a;
+  border-radius: 3px;
+
+ 
+ 
+
+}
+
+/* Search Bar Styles */
+.search-bar {
+  display: flex;
+  align-items: center;
+ 
+  padding: 5px;
+  border-radius: 4px;
+  
+}
+
+.search-bar input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 9px;
+  font-size: 15px;
+  width: 200px;
+  margin-right: 10px;
+}
+
+.search-bar button {
+  background-color: #ff2929;
+  color: white;
+  padding: 9px 12px;
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+ background-color: #ff6a6a;
+}
+
+.menu-icon {
+  display: none;
+  float:right ;
+  position:absolute;
+  right: 10px;
+  top: 20px;
+  justify-content: center;
+  align-items: center;
+  text-align: center; /* Hide menu icon on larger screens */
+}
+/* Responsive design for smaller screens */
+
+/* Responsive Design */
+
+/* Small screens: Mobile devices */
+@media (max-width: 600px) {
+  .movies-container {
+    justify-content: center;
+  }
+
+  .movie-card {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu-icon {
+    font-size: 25px;
+    color: white;
+    cursor: pointer;
+    display: block;
+  }
+
+  .navbar-links
+ {
+    display: none;
+  }
+
+  /* Show navbar-links and search-bar when menu is open */
+  .link-search.mobile-show .navbar-links{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+    align-items: flex-start;
+  }
+
+  .navbar-links a {
+    padding: 10px 0;
+  }
+  .movie-detail-page {
+    padding: 20px;
+   background-size: cover;
+   margin: 20px;
+   padding: 20px;
+   color: white;
+   height: 700px;
+    
+  }
+  .movie-detail-content{
+    margin-top: 70px;
+  }
+
+
+}
+
+/* Medium screens: Tablets */
+@media (min-width: 601px) and (max-width: 992px) {
+  .movie-card {
+    width: 45%;
+  }
+
+  .navbar-title {
+    font-size: 22px;
+  }
+
+  .nav-links a {
+    font-size: 16px;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 888px) {
+  /* Hide links and search bar, display menu icon */
+  .link-search {
+  
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 55px;
+    left: 0;
+    width: 100%;
+    background-color: #4b4b4b;
+    transition: all 0.3s ease;
+  }
+
+  .link-search.active {
+    display: flex;
+  }
+
+
+  .menu-icon {
+    font-size: 25px;
+    color: white;
+    cursor: pointer;
+    display: block;
+    margin-top: -5px;
+  }
+  /* Navbar Links Styling */
+  .navbar-links {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+  }
+  nav .nav-tittle{
+    margin: 10px 10%;
+    color: white;
+    letter-spacing: 2px;
+    cursor: pointer;
+    
+    
+    }
+  .nav-links {
+    font-size: 18px;
+    width: 100%;
+    padding: 10px 0;
+    color: white;
+  }
+
+ 
+  .search-bar {
+    display: flex;
+    align-items: center;
+    position:absolute;
+    right: 40px;
+ top: -40px;
+    padding: 5px;
+    border-radius: 4px;
+    
+  }
+  
+  .overview{
+    width:100%;
+  }
+  .movie-detail-poster {
+    width: 150px;
+  }
+
+  .movie-detail-content h3 {
+    font-size: 22px;
+  }
+
+  .movie-cast-list {
+    justify-content: center;
+  }
+
+  .cast-member-photo {
+    width: 150px;
+    height: 230px;
+  }
+
+
+
+  .runtime {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .movie-detail-page {
+    padding: 20px;
+   background-size: cover;
+   margin: 20px;
+   padding: 20px;
+   color: white;
+   height: 450px;
+    
+  }
+
+}
+
+/* Large screens: Desktops and larger laptops */
+
+@media(max-width: 1200px) {
+  nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 17px;
+    font-weight: 600;
+  
+  }
+
+
+  .movie-detail-poster {
+    width: 180px;
+  }
+
+  .movie-detail-content {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .overview {
+    width: 80%;
+  }
+
+  .movie-detail-content h3 {
+    font-size: 26px;
+  
+    margin-top: 120px;
+  }
+}
+
+@media(max-width: 955px) {
+  nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 4px;
+    font-size: 17px;
+    font-weight: 600;
+  
+  }
+}
+@media (min-width: 993px) and (max-width: 1200px) {
+  .movie-card {
+    width: 30%;
+  }
+
+  
+
+  .navbar-title {
+    font-size: 24px;
+  }
+
+  .nav-links a {
+    font-size: 18px;
+  }
+
+
+}
+
+/* Extra-large screens: TVs or large monitors */
+@media (min-width: 1201px) {
+ 
+  .navbar-title {
+    font-size: 26px;
+  }
+
+  .nav-links a {
+    font-size: 18px;
+  }
+}
+@media (max-width: 888px) {
+  .movies-container {
+    justify-content: center; /* Center the cards on smaller screens */
+  }
+  
+  .menu-icon {
+    display: block; /* Hide menu icon on larger screens */
+  }
+  .navbar-links
+ {
+    display: none;
+  }
+
+  .movie-card {
+    width: 100%; /* Allow cards to take full width on small screens */
+    max-width: 300px; /* Prevent cards from becoming too large */
+  }
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu-icon {
+    font-size: 25px;
+    color: white;
+    cursor: pointer;
+    display: block;
+  }
+
+  .navbar-links {
+    display: none;
+  }
+
+  /* Show navbar-links and search-bar when menu is open */
+  .link-search.mobile-show .navbar-links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+    align-items: flex-start;
+  }
+
+  .navbar-links a {
+    padding: 10px 0;
+    font-size: 15px;
+  }
+
+  .search-bar input {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px;
+    font-size: 15px;
+    width: 200px;
+    
+  }
+  
+  .search-bar button {
+    background-color: #ff2929;
+    color: white;
+    padding: 5px 12px;
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 550px){
+  .search-bar input {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px;
+    font-size: 13px;
+    width: 100px;
+    margin-right: 10px;
+  }
+  
+  .search-bar button {
+    background-color: #ff2929;
+    color: white;
+    padding: 5px 6px;
+    font-weight: 600;
+    font-size: 13px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .navbar-title{
+    font-size: 18px;
+
+
+  }
+  nav .nav-tittle{
+    margin: 13px 10px;
+    color: white;
+    letter-spacing: 1px;
+    cursor: pointer;
+    
+    
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+   
+      font-size: 17px;
+      font-weight: 600;
+    
+     
+    }
+    .movie-detail-page {
+      padding: 10px;
+    }
+ 
+    .movie-top {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .movie-detail-content {
+      text-align: center;
+    }
+  
+    .movie-detail-poster {
+      width: 120px;
+    }
+  
+    .movie-detail-content h3 {
+      font-size: 20px;
+    }
+  
+    .movie-cast-list {
+      gap: 10px;
+    }
+  
+    .cast-member-photo {
+      width: 120px;
+      height: 180px;
+    }
+  
+    .overview {
+      width: 100%;
+    }
+    .movie-detail-page {
+      padding: 20px;
+     background-size: cover;
+     margin: 20px;
+     padding: 20px;
+     color: white;
+     height: 720px;
+      
+    }
+    .movie-detail-content h3{
+      margin-top: 130px;
+    }
+}
+
+@media (max-width: 400px){
+  .movie-detail-page {
+    padding: 20px;
+   background-size: cover;
+   margin: 20px;
+   padding: 20px;
+   color: white;
+   height: 750px;
+    
+  }
+
+  .movie-detail-content{
+    margin-top: 140px;
+  }
+}
+
+@media (max-width: 300px){
+  .movie-detail-page {
+    padding: 20px;
+   background-size: cover;
+   margin: 20px;
+   padding: 20px;
+   color: white;
+   height: 800px;
+    
+  }
+
+  .movie-detail-content{
+    margin-top: 70px;
+  }
+}
